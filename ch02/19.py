@@ -1,0 +1,16 @@
+def main():
+    from os import path, mkdir
+    from collections import Counter
+
+    fp = "popular-names.txt"
+    with open(path.join(path.dirname(path.abspath(__file__)), fp), "r") as f:
+        s = f.readlines()
+    res = []
+    for t in s:
+        res.append(t.split()[0])
+    res = Counter(res)
+    print(res)
+
+
+if __name__ == "__main__":
+    main()
