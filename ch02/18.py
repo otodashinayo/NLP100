@@ -1,5 +1,6 @@
 def main():
-    from os import path, mkdir
+    from os import path
+    from pprint import pprint
 
     fp = "popular-names.txt"
     with open(path.join(path.dirname(path.abspath(__file__)), fp), "r") as f:
@@ -10,7 +11,7 @@ def main():
     for i in range(len(res)):
         res[i][2] = int(res[i][2])
     res.sort(key=lambda x:x[2], reverse=True)
-    print(res)
+    pprint(res)
 
 
 if __name__ == "__main__":

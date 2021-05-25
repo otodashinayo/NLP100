@@ -1,5 +1,5 @@
 def main():
-    from os import path, mkdir
+    from os import path
 
     fp = "popular-names.txt"
     with open(path.join(path.dirname(path.abspath(__file__)), fp), "r") as f:

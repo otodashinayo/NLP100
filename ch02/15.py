@@ -1,5 +1,6 @@
 def main():
     from os import path
+    from pprint import pprint
 
     fp = "popular-names.txt"
     n = int(input())
@@ -8,7 +9,7 @@ def main():
     res = []
     for t in s:
         res.append(t.replace("\n", "").replace("\t", " "))
-    print(res[-n:])
+    pprint(res[-n:])
 
 
 if __name__ == "__main__":
