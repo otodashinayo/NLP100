@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 requests = "*"
+mecab-python3 = "*"
+matplotlib = "*"
 
 [dev-packages]
 
