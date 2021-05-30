@@ -6,12 +6,15 @@ name = "pypi"
 [packages]
 requests = "*"
 numpy = "*"
+scipy = "*"
 pandas = "*"
 scikit-learn = "*"
 matplotlib = "*"
 networkx = "*"
 mecab-python3 = "*"
 cabocha-python = "*"
+gensim = "*"
+python-levenshtein = "*"
 
 [dev-packages]
 autopep8 = "*"
