@@ -11,7 +11,8 @@ def main():
             self.pos1 = d["pos1"]
 
         def __str__(self) -> str:
-            res = pformat({"surface": self.surface, "base": self.base, "pos": self.pos, "pos1": self.pos1})
+            res = pformat({"surface": self.surface, "base": self.base,
+                          "pos": self.pos, "pos1": self.pos1})
             return res
 
     class Chunk:
@@ -21,12 +22,14 @@ def main():
             self.srcs = d["srcs"]
 
         def __str__(self) -> str:
-            res = pformat({"morphs": self.morphs, "dst": self.dst, "srcs": self.srcs})
+            res = pformat(
+                {"morphs": self.morphs, "dst": self.dst, "srcs": self.srcs})
             return res
 
         @property
         def text(self):
-            res = "".join([morph.surface for morph in self.morphs if morph.pos != "記号"])
+            res = "".join(
+                [morph.surface for morph in self.morphs if morph.pos != "記号"])
             return res
 
         @property
@@ -47,7 +50,8 @@ def main():
         @property
         def contain_particle_2(self):
             if len(self.morphs) >= 2:
-                res = any([morph_1.pos1 == "サ変接続" and morph_2.surface == "を" and morph_2.pos == "助詞" for morph_1, morph_2 in zip(self.morphs[:-1], self.morphs[1:])])
+                res = any([morph_1.pos1 == "サ変接続" and morph_2.surface == "を" and morph_2.pos ==
+                          "助詞" for morph_1, morph_2 in zip(self.morphs[:-1], self.morphs[1:])])
             else:
                 res = False
             return res
@@ -65,13 +69,15 @@ def main():
         @property
         def particles_2(self):
             if len(self.morphs) >= 2:
-                res = [morph_2.base for morph_1, morph_2 in zip(self.morphs[:-1], self.morphs[1:]) if morph_1.pos1 == "サ変接続" and morph_2.surface == "を" and morph_2.pos == "助詞"]
+                res = [morph_2.base for morph_1, morph_2 in zip(
+                    self.morphs[:-1], self.morphs[1:]) if morph_1.pos1 == "サ変接続" and morph_2.surface == "を" and morph_2.pos == "助詞"]
             else:
                 res = []
             return res
 
     fp = "40/ai.ja.txt.parsed"
-    s = json.load(open(path.join(path.dirname(path.abspath(__file__)), fp), "r"))
+    s = json.load(
+        open(path.join(path.dirname(path.abspath(__file__)), fp), "r"))
     for t in s:
         for src, chunk in t.items():
             chunk["morphs"] = [Morph(morph) for morph in chunk["morphs"]]

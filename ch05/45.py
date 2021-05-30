@@ -11,7 +11,8 @@ def main():
             self.pos1 = d["pos1"]
 
         def __str__(self) -> str:
-            res = pformat({"surface": self.surface, "base": self.base, "pos": self.pos, "pos1": self.pos1})
+            res = pformat({"surface": self.surface, "base": self.base,
+                          "pos": self.pos, "pos1": self.pos1})
             return res
 
     class Chunk:
@@ -21,12 +22,14 @@ def main():
             self.srcs = d["srcs"]
 
         def __str__(self) -> str:
-            res = pformat({"morphs": self.morphs, "dst": self.dst, "srcs": self.srcs})
+            res = pformat(
+                {"morphs": self.morphs, "dst": self.dst, "srcs": self.srcs})
             return res
 
         @property
         def text(self):
-            res = "".join([morph.surface for morph in self.morphs if morph.pos != "記号"])
+            res = "".join(
+                [morph.surface for morph in self.morphs if morph.pos != "記号"])
             return res
 
         @property
@@ -55,7 +58,8 @@ def main():
             return res
 
     fp = "40/ai.ja.txt.parsed"
-    s = json.load(open(path.join(path.dirname(path.abspath(__file__)), fp), "r"))
+    s = json.load(
+        open(path.join(path.dirname(path.abspath(__file__)), fp), "r"))
     for t in s:
         for src, chunk in t.items():
             chunk["morphs"] = [Morph(morph) for morph in chunk["morphs"]]
