@@ -7,7 +7,8 @@ def main():
     with open(path.join(path.dirname(path.abspath(__file__)), fp), "r") as f:
         s = f.readlines()
     s = [re.sub("\n", "", t) for t in s]
-    res = [re.sub(".*\[\[ファイル\:|(\|.*)*\]\].*", "", t) for t in s if re.search("\[\[ファイル\:.*(\|.*)*\]\]", t)]
+    res = [re.sub(".*\[\[ファイル\:|(\|.*)*\]\].*", "", t)
+           for t in s if re.search("\[\[ファイル\:.*(\|.*)*\]\]", t)]
     pprint(res)
 
 

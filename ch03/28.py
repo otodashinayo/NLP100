@@ -26,8 +26,10 @@ def main():
                     value = re.sub("'", "", value)
                     value = re.sub("\[\[|(#[^[]*?)*(\|[^[]*?)*\]\]", "", value)
                     value = re.sub("\[.*?\]", "", value)
-                    value = re.sub("\**\{\{(0|en icon|center\||lang\|([^}]*?\|)*|Cite web\|([^}]*?\|)*|仮リンク\|([^}]*?\|)*)|\}\}", "", value)
-                    value = re.sub("<ref.*?/>|<ref.*?>|</ref>|<br />", "", value)
+                    value = re.sub(
+                        "\**\{\{(0|en icon|center\||lang\|([^}]*?\|)*|Cite web\|([^}]*?\|)*|仮リンク\|([^}]*?\|)*)|\}\}", "", value)
+                    value = re.sub(
+                        "<ref.*?/>|<ref.*?>|</ref>|<br />", "", value)
                     value = re.sub(":en:", "", value)
                     res[key] = value
                 else:
@@ -36,8 +38,10 @@ def main():
                     value = re.sub("'", "", value)
                     value = re.sub("\[\[|(#[^[]*?)*(\|[^[]*?)*\]\]", "", value)
                     value = re.sub("\[.*?\]", "", value)
-                    value = re.sub("\**\{\{(0|en icon|center\||lang\|([^}]*?\|)*|Cite web\|([^}]*?\|)*|仮リンク\|([^}]*?\|)*)|\}\}", "", value)
-                    value = re.sub("<ref.*?/>|<ref.*?>|</ref>|<br />", "", value)
+                    value = re.sub(
+                        "\**\{\{(0|en icon|center\||lang\|([^}]*?\|)*|Cite web\|([^}]*?\|)*|仮リンク\|([^}]*?\|)*)|\}\}", "", value)
+                    value = re.sub(
+                        "<ref.*?/>|<ref.*?>|</ref>|<br />", "", value)
                     value = re.sub(":en:", "", value)
                     res[key] += "\n" + value
     pprint(res)

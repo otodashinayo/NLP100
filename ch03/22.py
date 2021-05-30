@@ -7,7 +7,8 @@ def main():
     with open(path.join(path.dirname(path.abspath(__file__)), fp), "r") as f:
         s = f.readlines()
     s = [re.sub("\n", "", t) for t in s]
-    res = [re.sub("^\[\[Category\:|(\|.)*\]\]$", "", t) for t in s if re.search("^\[\[Category\:.*(\|.)*\]\]$", t)]
+    res = [re.sub("^\[\[Category\:|(\|.)*\]\]$", "", t)
+           for t in s if re.search("^\[\[Category\:.*(\|.)*\]\]$", t)]
     pprint(res)
 
 
