@@ -5,12 +5,16 @@ name = "pypi"
 
 [packages]
 requests = "*"
-mecab-python3 = "*"
+numpy = "*"
+pandas = "*"
+scikit-learn = "*"
 matplotlib = "*"
-cabocha-python = "*"
 networkx = "*"
+mecab-python3 = "*"
+cabocha-python = "*"
 
 [dev-packages]
+autopep8 = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.6"
