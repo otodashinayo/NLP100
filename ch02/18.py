@@ -10,7 +10,7 @@ def main():
         res.append(t.split())
     for i in range(len(res)):
         res[i][2] = int(res[i][2])
-    res.sort(key=lambda x:x[2], reverse=True)
+    res.sort(key=lambda x: x[2], reverse=True)
     pprint(res)
 
 

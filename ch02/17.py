@@ -10,5 +10,6 @@ def main():
     res = set(res)
     print(len(res))
 
+
 if __name__ == "__main__":
     main()
