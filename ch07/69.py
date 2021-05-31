@@ -17,9 +17,9 @@ def main():
         df.loc[i, range(300)] = vec
         print(df.loc[i, "COUNTRY"])
     model_clf = KMeans(n_clusters=5, random_state=0)
-    df["CLUSTER"] = model_clf.fit_predict(df.loc[:, range(300)])
+    df["CLUSTER"] = model_clf.fit_predict(df[range(300)])
     model_tsne = TSNE(random_state=0)
-    df[["X", "Y"]] = model_tsne.fit_transform(df.loc[:, range(300)])
+    df[["X", "Y"]] = model_tsne.fit_transform(df[range(300)])
     for cluster in range(5):
         plt.scatter(df[df["CLUSTER"] == cluster]["X"],
                     df[df["CLUSTER"] == cluster]["Y"])

@@ -16,7 +16,7 @@ def main():
         vec = model[df.loc[i, "COUNTRY"]]
         df.loc[i, range(300)] = vec
         print(df.loc[i, "COUNTRY"])
-    model_clf = linkage(df.loc[:, range(300)], method="ward")
+    model_clf = linkage(df[range(300)], method="ward")
     pprint(model_clf[:5])
     dendrogram(model_clf)
     plt.pause(5)
