@@ -15,6 +15,7 @@ mecab-python3 = "*"
 cabocha-python = "*"
 gensim = "*"
 python-levenshtein = "*"
+torch = "*"
 
 [dev-packages]
 autopep8 = "*"
