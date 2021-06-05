@@ -1,6 +1,5 @@
 def main():
     from os import path
-    from pprint import pprint
     import json
     from collections import Counter
     import matplotlib.pyplot as plt
