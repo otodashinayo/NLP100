@@ -53,7 +53,7 @@ def main():
     loss /= size
     correct /= size
     print(
-        f"Train Data\nTest Error: \n Accuracy: {(100 * correct):>0.1f}%, Avg loss: {loss:>8f} \n")
+        f"Train Error: \n Accuracy: {(100 * correct):>0.1f}%, Avg loss: {loss:>8f} \n")
 
     size = len(dataloader_test.dataset)
     loss, correct = 0, 0
@@ -65,7 +65,7 @@ def main():
     loss /= size
     correct /= size
     print(
-        f"Test Data\nTest Error: \n Accuracy: {(100 * correct):>0.1f}%, Avg loss: {loss:>8f} \n")
+        f"Test Error: \n Accuracy: {(100 * correct):>0.1f}%, Avg loss: {loss:>8f} \n")
 
 
 if __name__ == "__main__":
