@@ -16,6 +16,7 @@ cabocha-python = "*"
 gensim = "*"
 python-levenshtein = "*"
 torch = "*"
+transformers = "*"
 
 [dev-packages]
 autopep8 = "*"
