@@ -58,9 +58,8 @@ def main():
             self.softmax = nn.Softmax(dim=1)
 
         def forward(self, x):
-            hidden = torch.zeros(1, x.size(0), hidden_size).to(device)
             y = self.embedding(x)
-            y, hidden = self.rnn(y, hidden)
+            y, hidden = self.rnn(y)
             y = self.linear(y[:, -1, :])
             y = self.softmax(y)
             return y
